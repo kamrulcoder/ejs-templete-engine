@@ -1,0 +1,36 @@
+<!-- header  -->
+<%- include("../partials/header.ejs") %>
+
+    <!-- menu-section  -->
+    <%- include("../partials/menu.ejs") %>
+
+
+        <div class="container">
+
+            <h2>Home Page </h2>
+
+            <% if(post.published) { %>
+                <h3>
+                    <%= post.title %>
+                </h3>
+                <p>
+                    <%= post.body %>
+                </p>
+                <% } else{%>
+                    <p>Not found Post </p>
+                    <% } %>
+
+                        <h4>All post and author </h4>
+                        <ul>
+                            <% for(p of posts) { %>
+                                <li>
+                                    <%= p.title %>
+                                        <%= p.author %>
+                                </li>
+                                <% } %>
+                        </ul>
+
+        </div>
+
+        <!-- footer  -->
+        <%- include("../partials/footer.ejs") %>
